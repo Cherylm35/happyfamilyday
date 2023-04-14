@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Family Day!</title>
+  <link rel="stylesheet" href="family2.css">
+</head>
+<body>
+  <div id="heart-background">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+  
+  <div class="content">
+    <h1>Happy Family Day!</h1>
+    <p>Family is the most important thing in the world. It's where we find love, support, and belonging. That's why we celebrate Family Day - a day to spend time with the ones we love most.</p>
+    <p>Whether it's going for a walk in the park, having a picnic, or just enjoying a movie night at home, there are many ways to celebrate Family Day. It's a time to create memories and strengthen the bond between family members.</p>
+    <p>So take a moment to appreciate your family today and cherish the moments you share together. <b>Happy Family Day!</b></p>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    var container = document.getElementById('heart-background');
+    for (var i = 0; i < 50; i++) {
+        var heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.top = Math.random() * 100 + '%';
+        container.appendChild(heart);
+    }
+    anime({
+        targets: '.heart',
+        translateX: function() { return anime.random(-50, 50) + '%'; },
+        translateY: function() { return anime.random(-50, 50) + '%'; },
+        delay: function(el, i) { return i * 100; },
+        direction: 'alternate',
+        easing: 'easeInOutQuad',
+        loop: true,
+    });
+  </script>
+</body>
+</html>
